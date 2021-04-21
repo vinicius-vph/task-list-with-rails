@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag "task_layout", "form"  %>
+    <%= javascript_include_tag "/home/vinicius/treinadev/rails-crud/task_list/app/javascript/edit.js" %>
+    <title>Edit task</title>
+</head>
+<body>
+    <div class="flex-container">
+        
+        <h1>✔️ Task List</h1>
+        <h3>✏️ Edite sua tarefa</h3>
+        
+        <%= link_to "⬅ Voltar", '/' %>
+        <%= form_for @task do |f| %>
+            <div class="column">
+                <%= f.label :description, 'Descrição da Tarefa' %>
+                <%= f.text_field :description, class: "input_text_edit" %>
+            </div>
+            <div class="row">
+                <%= f.label :status, 'Status' %>
+                <%= f.check_box :status %>
+            </div>
+            
+            <%= f.submit 'Atualizar', class: "input_submit_edit" %>
+
+        <% end %>
+    </div>
+</body>
+</html>

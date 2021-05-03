@@ -7,6 +7,8 @@ gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 
 gem 'sqlite3', '~> 1.4', '>= 1.4.2'
 
+gem 'pg', '~> 1.1'
+
 gem 'puma', '~> 5.0'
 
 gem 'sass-rails', '>= 6'

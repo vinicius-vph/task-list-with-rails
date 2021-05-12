@@ -16,9 +16,9 @@ development:
   database: postgres
   host: localhost
   pool: 5
-  username: postgres
-  password: postgres
-  port: 5433
+  username: test
+  password: test
+  port: 5432
 
 test:
   <<: *default
@@ -29,7 +29,7 @@ test:
   pool: 5
   username: postgres
   password: postgres
-  port: 5433
+  port: 5432
 
 production:
   <<: *default
@@ -40,4 +40,4 @@ production:
   pool: 5
   username: postgres
   password: postgres
-  port: 5433
+  port: 5432

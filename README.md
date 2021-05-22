@@ -1,4 +1,4 @@
-## This is an TO-DO list with Rails.
+## This is a TO-DO list with Rails.
 <hr>
 
 ### For run this project is necessary to have:

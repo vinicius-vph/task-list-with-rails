@@ -38,7 +38,7 @@
 git@github.com:vinicius-vph/task-list-with-rails.git
 ```
 
-#### Enter the project directory
+#### Access the project directory
 ```
 cd task-list-with-rails
 ```

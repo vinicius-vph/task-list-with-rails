@@ -9,6 +9,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'mini_racer', platforms: :ruby
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
+gem 'rexml'
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.0'

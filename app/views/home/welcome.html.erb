@@ -1,30 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Welcome to Task List</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Slab&display=swap');
-    </style>  
-    <%= stylesheet_link_tag 'welcome' %>
-</head>
-
-<body>
-    <div class="flex-container">
-        <h1>Bem vindo ao Task List</h1>
-        <h3>Sua lista de tarefas:</h3>
-            <%= link_to '✔️ Criar Nova Tarefa', new_task_path() %>
-        <% @tasks.each do |task| %>
-            <ul class="card">
-                <li>
-                    <%= task.description %>
-                </li>
-                <%= link_to '✏️ Editar', edit_task_path(task) %>
-                <%= link_to '❌ Apagar', task_path(task), method: :delete, 
-                data: {confirm: 'Quer apagar esta tarefa?'} %>
-            </ul>
-        <% end %>
-    </div>
-    
-</body>
-</html>
+<div class="d-flex flex-column align-items-center py-3">
+  <h1 class="my-5">Bem vindo ao Task List</h1>
+  <h3 class="my-5">Sua lista de tarefas</h3>
+  <%= link_to '⚙️ Gerenciar Tarefas', tasks_path(), class: "main_button btn btn-primary d-flex flex-row align-items-center justify-content-center rounded" %>
+</div>

@@ -1,5 +1,3 @@
 class HomeController < ApplicationController
-    def welcome
-        @tasks = Task.all
-    end
+  def welcome; end
 end

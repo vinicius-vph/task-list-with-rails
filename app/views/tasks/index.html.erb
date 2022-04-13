@@ -1,0 +1,18 @@
+<div class="container d-flex flex-column align-items-center py-3">
+  <%= link_to '⬅ Voltar', root_path(), class: "btn btn-dark d-flex flex-row align-self-start align-items-center justify-content-center rounded" %>
+  <%= link_to '✔️ Criar Nova Tarefa', new_task_path(), class: "main_button align-items-center btn btn-success d-flex flex-row align-items-center justify-content-center rounded my-3" %>
+  <div class="my-5 py-1 w-50">
+    <ol class="list-group list-group-numbered">
+      <% @tasks.each do |task| %>
+        <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-start w-100">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold"><%= task.description %></div>
+          </div>
+          <%= link_to '✏️', edit_task_path(task), class:"btn bg-info rounded-pill align-baseline" %>
+          <%= link_to '❌', task_path(task), method: :delete,
+          data: {confirm: 'Quer apagar esta tarefa?'}, class:"btn bg-warning rounded-pill align-baseline" %>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+</div>

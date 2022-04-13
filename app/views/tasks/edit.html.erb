@@ -1,33 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%= stylesheet_link_tag "task_layout", "form"  %>
-    <%= javascript_include_tag "/home/vinicius/treinadev/rails-crud/task_list/app/javascript/edit.js" %>
-    <title>Edit task</title>
-</head>
-<body>
-    <div class="flex-container">
-        
-        <h1>✔️ Task List</h1>
-        <h3>✏️ Edite sua tarefa</h3>
-        
-        <%= link_to "⬅ Voltar", '/' %>
-        <%= form_for @task do |f| %>
-            <div class="column">
-                <%= f.label :description, 'Descrição da Tarefa' %>
-                <%= f.text_field :description, class: "input_text_edit" %>
-            </div>
-            <div class="row">
-                <%= f.label :status, 'Status' %>
-                <%= f.check_box :status %>
-            </div>
-            
-            <%= f.submit 'Atualizar', class: "input_submit_edit" %>
+<div class="container d-flex flex-column align-items-center py-3">
+  <%= link_to '⬅ Voltar', :back, class: "btn btn-dark d-flex flex-row align-self-start align-items-center justify-content-center rounded" %>
+  <h1 class="my-5">✔️ Task List</h1>
+  <h3>✏️ Edite sua tarefa</h3>
 
-        <% end %>
-    </div>
-</body>
-</html>
+  <div class="card px-3 py-5">
+    <%= form_for @task do |f| %>
+      <div class="col-12 my-2">
+        <%= f.label :description, 'Descrição da Tarefa', class:"form-label" %>
+        <%= f.text_field :description, class:"form-control", placeholder:"Digite sua tarefa" %>
+      </div>
+      <div class="col-12 my-5">
+        <%= f.check_box :status, class:"form-check-input me-2" %>
+        <%= f.label :status, 'Status', class:"form-check-label" %>
+      </div>
+      <%= f.submit 'Atualizar', class: "btn btn-secondary w-100" %>
+    <% end %>
+  </div>
+</div>

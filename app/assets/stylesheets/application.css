@@ -1,33 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Slab&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #EFEFEF;
+  background-color: #EFEFEF;
+  width: 100vw;
+  height: 100vh;
 }
 
 h1 {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 36px;
-    text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 36px;
+  text-align: center;
 }
 
 h3 {
-    margin: 2px 0 50px;
-
-    font-size: 20px;
+  margin: 2px 0 50px;
+  font-size: 20px;
 }
 
 a {
-    width: 100px;
-    height: 35px;
+  width: 100px;
+  height: 35px;
 }
 
 a.main_button {
-    width: 200px;
-    height: 70px;
+  width: 200px;
+  height: 70px;
+}
+
+.small_text {
+  font-size: 7px!important;
+}
+
+.rounded-circle {
+  width: 65px!important;
+  height: 65px!important;
+}
+
+.completed {
+  background-color: rgb(185, 223, 185)!important;
 }

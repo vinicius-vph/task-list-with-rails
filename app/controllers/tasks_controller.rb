@@ -1,9 +1,9 @@
 class TasksController < ApplicationController
-  # http_basic_authenticate_with name: Rails.application.credentials.authenticate[:name],
-  #                              password: Rails.application.credentials.authenticate[:password]
+  before_action :authenticate!, only: %i[new update destory]
+  before_action :set_todo!, only: %i[edit update destory]
 
   def index
-    @tasks = Task.all
+    @tasks = current_user.tasks
   end
 
   def new
@@ -11,24 +11,30 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(params.require(:task).permit(:description, :status))
-    @task.save
+    current_user.tasks.create(task_params)
+
     redirect_to tasks_path
   end
 
-  def edit
-    @task = Task.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @task = Task.find(params[:id])
-    @task.update(params.require(:task).permit(:description, :status))
+    @task.update(task_params)
     redirect_to tasks_path
   end
 
   def destroy
-    task = Task.find(params[:id])
-    task.destroy
+    @task.destroy
     redirect_to tasks_path
+  end
+
+  private
+
+  def task_params
+    params.require(:task).permit(:description, :status)
+  end
+
+  def set_todo!
+    @task = Task.find(params[:id])
   end
 end

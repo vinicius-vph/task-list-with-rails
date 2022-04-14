@@ -1,0 +1,23 @@
+<%= link_to '⬅ Voltar', :back, class: "btn btn-dark d-flex flex-row align-self-start align-items-center justify-content-center rounded my-2 mx-2" %>
+<div class="d-flex flex-column align-items-center justify-content-center py-5">
+  <%# <h1 class="my-5">✔️ Task List</h1> %>
+  <%# <h3>📝 Crie sua tarefa</h3> %>
+
+  <div class="card px-3 py-5">
+    <%= form_for :session, url: sessions_path do |f| %>
+      <div class="row mb-3">
+        <%= f.label :email, 'Email', class:"col-sm-4 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.text_field :email, class:"form-control", placeholder:"Digite seu email" %>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <%= f.label :password, 'Senha', class:"col-sm-4 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.password_field :password, class:"form-control", placeholder:"Digite sua senha" %>
+        </div>
+      </div>
+      <%= f.submit 'Logar', class: "btn btn-primary w-100" %>
+    <% end %>
+  </div>
+</div>

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe 'User creates a todo' do
+describe 'User creates a task' do
   context 'successfully' do
-    it 'should be able creates a todo' do
+    it 'should be able creates a task' do
       sign_in
       create_task 'Tomar café'
 

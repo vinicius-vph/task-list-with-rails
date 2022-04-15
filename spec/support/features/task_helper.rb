@@ -11,4 +11,11 @@ module Features
   def display_completed_task(task_title)
     have_css 'li.completed', text: task_title
   end
+
+  def update_task(task_title)
+    visit tasks_path
+    click_on '✏️'
+    fill_in 'Descrição da Tarefa',	with: task_title
+    click_on 'Atualizar'
+  end
 end

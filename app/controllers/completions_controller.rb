@@ -5,8 +5,6 @@ class CompletionsController < ApplicationController
   end
 
   def destroy
-    p "@@@@@@@@@@@@@@@22"
-    p task
     task.incompleted!
     redirect_to tasks_path
   end

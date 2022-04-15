@@ -10,10 +10,11 @@
           </div>
           <div class="ms-2 me-5 fw-bold d-flex flex-row justify-content-around align-items-center">
             <% if task.completed? %>
-              <%#= button_to 'Marcar Incompleto', task_completion_path(task.id), method: :delete,
+              <%= button_to 'Marcar Incompleto', task_completions_path(task), method: :delete,
                class: "btn btn-outline-primary rounded-circle small_text text-break d-flex flex-column justify-content-center align-items-center me-2" %>
             <% else %>
-              <%= button_to 'Marcar Completo', task_completions_path(task), class: "btn btn-outline-success rounded-circle small_text text-break d-flex flex-column justify-content-center align-items-center me-2" %>
+              <%= button_to 'Marcar Completo', task_completions_path(task),
+                class: "btn btn-outline-success rounded-circle small_text text-break d-flex flex-column justify-content-center align-items-center me-2" %>
             <% end %>
           </div>
           <%# <div class="">

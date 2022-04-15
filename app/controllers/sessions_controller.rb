@@ -6,4 +6,8 @@ class SessionsController < ApplicationController
 
     redirect_to new_task_path
   end
+
+  # def destroy
+  #   session[:current_email] = nil
+  # end
 end

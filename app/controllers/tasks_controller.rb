@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :authenticate!, only: %i[new update destory]
+  before_action :authenticate!, only: %i[new update destroy]
   before_action :set_todo!, only: %i[edit update destroy]
 
   def index

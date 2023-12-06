@@ -2,13 +2,13 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
-gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
+gem 'rails', '~> 7.1', '>= 7.1.2'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'jbuilder', '~> 2.7'
-gem 'mini_racer', platforms: :ruby
+# gem 'mini_racer', platforms: :ruby
 gem 'pg', '~> 1.1'
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 6.4'
 gem 'rexml'
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'

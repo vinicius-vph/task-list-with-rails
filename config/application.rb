@@ -23,5 +23,10 @@ module TaskList
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Define default form builder
+    # config.after_initialize do
+    #   ActionView::Base.default_form_builder = FormBuilderHelper::CustomFormBuilder
+    # end
   end
 end

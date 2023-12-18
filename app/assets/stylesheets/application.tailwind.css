@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    @apply w-screen h-screen rounded-lg px-0 py-0 ring-1 ring-slate-900/5 shadow-xl dark:bg-gradient-to-bl dark:from-gray-600 dark:to-gray-900 bg-gradient-to-b from-gray-300 to-gray-100;
+  }
+
+  header {
+    @apply w-screen h-20 my-12 inline-flex items-center justify-between p-2 rounded shadow-lg;
+  }
+
+  .user-info-container {
+    @apply inline-flex items-center justify-between h-16 w-24;
+  }
+
+  .dark-button-container {
+    @apply relative inline-flex items-center cursor-pointer;
+  }
+
+  main {
+    @apply w-screen h-screen mx-auto;
+  }
+
+  .btn-sign {
+    @apply flex items-center justify-center w-14 py-2 px-4 bg-blue-200 rounded-lg text-xs;
+  }
+
+  .btn-back {
+    @apply flex items-center justify-center w-14 px-0 py-0 ml-4 bg-orange-200 rounded-lg;
+  }
+
+  .btn-manager {
+    @apply py-2 px-4 bg-teal-500 rounded-lg;
+  }
+
+  .btn-create {
+    @apply py-2 px-2 bg-green-500 rounded-lg;
+  }
+}

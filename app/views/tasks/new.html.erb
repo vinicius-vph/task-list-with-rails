@@ -1,15 +1,15 @@
-<%= link_to '⬅ Voltar', :back, class: "btn btn-dark d-flex flex-row align-self-start align-items-center justify-content-center rounded my-2 mx-2" %>
-<div class="container d-flex flex-column align-items-center py-3">
-  <h1 class="my-5">✔️ Task List</h1>
-  <h3>📝 Crie sua tarefa</h3>
+<%= render 'shared/back_button' %>
+<%= content_tag :h3, '📝 Crie sua tarefa, ou Objetivo', class: 'flex intems-center justify-center font-mono text-lg text-gray-200 mt-14 mx-auto' %>
 
-  <div class="card px-3 py-5">
-    <%= form_for @task do |f| %>
-      <div class="col-12 my-2">
-        <%= f.label :description, 'Descrição da Tarefa', class:"form-label" %>
-        <%= f.text_field :description, class:"form-control", placeholder:"Digite sua tarefa" %>
-      </div>
-      <%= f.submit 'Criar', class: "btn btn-primary mt-5 w-100" %>
+<%= content_tag :div, class: '' do %>
+  <%= content_tag :div, class: '' do %>
+    <%= form_with(scope: :tasks, url: :tasks, method: :post, class: 'form' ) do |form| %>
+      <%= content_tag :div, class: '' do %>
+        <%= form.label :description, title: 'Descrição da Tarefa', class:'' %>
+        <%= form.text_area :description, class:'w-full h-56 rounded-xl', placeholder:'Digite sua tarefa' %>
+      <% end %>
+
+      <%= form.submit 'Criar Tarefa', class: 'btn-submit' %>
     <% end %>
-  </div>
-</div>
+  <% end %>
+<% end %>

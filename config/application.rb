@@ -25,8 +25,8 @@ module TaskList
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Define default form builder
-    # config.after_initialize do
-    #   ActionView::Base.default_form_builder = FormBuilderHelper::CustomFormBuilder
-    # end
+    config.after_initialize do
+      ActionView::Base.default_form_builder = FormBuilderHelper::CustomFormBuilder
+    end
   end
 end

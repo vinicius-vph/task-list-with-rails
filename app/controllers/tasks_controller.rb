@@ -1,9 +1,10 @@
 class TasksController < ApplicationController
-  before_action :authenticate!, only: %i[new update destroy]
+  before_action :authenticate!
   before_action :set_todo!, only: %i[edit update destroy]
 
   def index
     @tasks = current_user.tasks
+    # @tasks = Task.all
   end
 
   def new
@@ -31,7 +32,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:description, :status)
+    params.require(:tasks).permit(:description)
   end
 
   def set_todo!

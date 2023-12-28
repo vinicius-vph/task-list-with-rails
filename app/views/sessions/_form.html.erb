@@ -1,0 +1,26 @@
+<%= render 'shared/back_button' %>
+
+<%= form_with(scope: :session, url: :sessions, method: :post, class: 'form' ) do |form| %>
+  <%= render 'sessions/field_name', form: form if view.eql?(:register) %>
+
+  <%= content_tag :div, class: '' do %>
+    <%= form.label :email, title: 'Email' %>
+    <%= form.text_field :email, placeholder:"Digite seu email" %>
+  <% end %>
+
+  <%= content_tag :div, class: '' do %>
+    <%= form.label :password, title: 'Senha' %>
+    <%= form.password_field :password, placeholder:"Digite sua senha" %>
+  <% end %>
+
+  <%= content_tag :div, class: 'remember-me' do %>
+    <%= content_tag :div, class: '' do %>
+      <%= check_box_tag '', value: '',  checked: false, id: 'remember', class: "w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-1 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"   %>
+      <%= content_tag :label, 'Remember me', for: :remember, class: "" %>
+    <% end %>
+  <% end %>
+
+  <%= form.submit "#{view.eql?(:register) ? 'Criar Cadastro' : 'Logar'}", class: "btn-submit" %>
+<% end %>
+
+<%= render 'sessions/registered_user_button' if view.eql?(:register) %>

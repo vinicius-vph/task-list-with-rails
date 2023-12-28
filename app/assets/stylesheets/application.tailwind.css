@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply w-screen h-screen rounded-lg px-0 py-0 ring-1 ring-slate-900/5 shadow-xl dark:bg-gradient-to-bl dark:from-gray-600 dark:to-gray-900 bg-gradient-to-b from-gray-300 to-gray-100;
+  }
+
+  main {
+    @apply w-screen h-screen mx-auto;
+  }
+
+  .main-header {
+    @apply f-inline justify-between w-screen h-20 my-12 p-2 rounded shadow-2xl;
+  }
+
+  .user-container {
+    @apply f-inline h-16 w-36;
+
+    img {
+      @apply w-1/4 h-8 rounded-full;
+    }
+
+    a {
+      @apply w-3/4 text-gray-900 dark:text-gray-300 ml-1;
+    }
+
+    p {
+      @apply block text-[8px] text-gray-900 dark:text-gray-300;
+    }
+  }
+}
+
+@layer utilities {
+  .f-inline {
+    @apply inline-flex items-center;
+  }
+}
+
+@layer components {
+  /* ***** buttons ***** */
+  .btn-general {
+    @apply f-inline justify-center rounded-xl py-2 px-2;
+  }
+
+  .btn-container-inline {
+    @apply inline-flex items-center justify-start px-1 py-1 mx-auto w-screen;
+  }
+
+  .btn-auth {
+    @apply btn-general w-20 h-10 dark:bg-blue-400 bg-blue-200 text-xs;
+  }
+
+  .btn-signin {
+    @apply text-white bg-violet-500 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-violet-500 dark:hover:bg-violet-800 dark:focus:ring-violet-800;
+  }
+
+  .btn-back {
+    @apply btn-general w-16 h-10 rounded-full dark:bg-gray-400 bg-gray-200;
+
+  }
+
+  .btn-create {
+    @apply btn-general w-20 h-20 my-auto rounded-full bg-green-500 mx-auto;
+  }
+
+  .btn-svg {
+    @apply w-6 h-6 rounded-full;
+  }
+
+  .btn-submit {
+    @apply text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800;
+  }
+
+  /* ***** form ***** */
+
+  .form {
+    @apply flex-col rounded-xl shadow-2xl bg-slate-500 p-4 max-w-sm mx-auto mt-24 mb-8;
+
+    div {
+      @apply mb-5;
+    }
+
+    .remember-me {
+      @apply flex items-start;
+
+      div {
+        @apply flex items-center;
+
+        label {
+          @apply ms-2 text-sm font-medium text-gray-900 dark:text-gray-300;
+        }
+      }
+    }
+  }
+
+  /* ***** tasks ***** */
+
+  .taks-container {
+    @apply grid grid-rows-2 grid-cols-2 grid-flow-row gap-2 hover:gap-4 mt-16 px-2;
+
+  }
+  .task-content {
+    @apply flex flex-col justify-between h-56 bg-neutral-300 rounded-2xl shadow-lg hover:bg-slate-500;
+
+    p {
+      @apply w-full h-5/6 text-gray-600 text-xs pl-2 pt-2;
+    }
+  }
+  .task-buttons{
+    @apply flex flex-row items-center justify-evenly w-full h-1/6 text-xs text-green-600;
+  }
+}

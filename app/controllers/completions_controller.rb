@@ -1,4 +1,6 @@
 class CompletionsController < ApplicationController
+  before_action :authenticate!
+  
   def create
     task.completed!
     redirect_to tasks_path

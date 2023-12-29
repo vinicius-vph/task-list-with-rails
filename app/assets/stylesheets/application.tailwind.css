@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .f-inline {
+    @apply inline-flex items-center;
+  }
+}
+
 @layer base {
   body {
     @apply w-screen h-screen rounded-lg px-0 py-0 ring-1 ring-slate-900/5 shadow-xl dark:bg-gradient-to-bl dark:from-gray-600 dark:to-gray-900 bg-gradient-to-b from-gray-300 to-gray-100;
@@ -12,7 +18,7 @@
   }
 
   .main-header {
-    @apply f-inline justify-between w-screen h-20 my-12 p-2 rounded shadow-2xl;
+    @apply f-inline justify-between w-[96%] h-14 mb-10 mt-2 mx-[2%] px-4 border border-slate-600 rounded-full shadow-md;
   }
 
   .user-container {
@@ -32,12 +38,6 @@
   }
 }
 
-@layer utilities {
-  .f-inline {
-    @apply inline-flex items-center;
-  }
-}
-
 @layer components {
   /* ***** buttons ***** */
   .btn-general {
@@ -49,7 +49,7 @@
   }
 
   .btn-auth {
-    @apply btn-general w-20 h-10 dark:bg-blue-400 bg-blue-200 text-xs;
+    @apply btn-general w-16 h-8 dark:bg-blue-400 bg-blue-200 text-[11px];
   }
 
   .btn-signin {
@@ -57,7 +57,7 @@
   }
 
   .btn-back {
-    @apply btn-general w-16 h-10 rounded-full dark:bg-gray-400 bg-gray-200;
+    @apply btn-general w-12 h-6 rounded-full dark:bg-gray-400 bg-gray-200;
 
   }
 

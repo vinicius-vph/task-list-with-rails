@@ -1,6 +1,16 @@
 <%= render 'shared/back_button' %>
+<%
+  scope = view.eql?(:register) ? :user : :session
+  url = view.eql?(:register) ? :users : :login
+  title = view.eql?(:register) ? 'Bem vindo !' : 'Bem vindo de Volta !'
+%>
 
-<%= form_with(scope: :session, url: :sessions, method: :post, class: 'form' ) do |form| %>
+<%= content_tag :a, href: root_path do -%>
+  <%= content_tag :h3, title, class: 'flex intems-center justify-center font-mono text-xl text-gray-200 mt-8 mx-auto'%>
+<% end %>
+
+
+<%= form_with(scope: scope, url: url, method: :post, class: 'form' ) do |form| %>
   <%= render 'sessions/field_name', form: form if view.eql?(:register) %>
 
   <%= content_tag :div, class: '' do %>
@@ -23,4 +33,4 @@
   <%= form.submit "#{view.eql?(:register) ? 'Criar Cadastro' : 'Logar'}", class: "btn-submit" %>
 <% end %>
 
-<%= render 'sessions/registered_user_button' if view.eql?(:register) %>
+<%= render 'sessions/unregistered_user_button' if view.eql?(:login) %>

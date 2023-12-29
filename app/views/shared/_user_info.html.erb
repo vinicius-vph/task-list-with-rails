@@ -1,5 +1,5 @@
 <%= image_tag 'vinicius'  %>
 <%= content_tag :a, href: root_path do -%>
-  <%= content_tag :p, "Bem vindo, #{session[:current_user]}" %>
-  <%= content_tag :p, "#{session[:current_email]}" %>
+  <%= content_tag :p, "Bem vindo, #{current_user.name}" %>
+  <%= content_tag :p, "#{current_user.email}" %>
 <% end -%>

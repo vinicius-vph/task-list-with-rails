@@ -3,8 +3,8 @@ class TasksController < ApplicationController
   before_action :set_todo!, only: %i[edit update destroy]
 
   def index
-    @tasks = current_user.tasks
-    # @tasks = Task.all
+    # @tasks = current_user.tasks
+    @tasks = Task.all
   end
 
   def new
@@ -12,8 +12,8 @@ class TasksController < ApplicationController
   end
 
   def create
-    current_user.tasks.create(task_params)
-
+    # current_user.tasks.create(task_params)
+    Task.create(task_params)
     redirect_to tasks_path
   end
 

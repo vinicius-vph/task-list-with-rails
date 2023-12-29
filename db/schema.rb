@@ -10,23 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_05_182903) do
-  create_table "cards", force: :cascade do |t|
-    t.integer "list_id", null: false
-    t.string "name"
-    t.integer "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["list_id"], name: "index_cards_on_list_id"
-  end
-
-  create_table "lists", force: :cascade do |t|
-    t.string "name"
-    t.integer "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+ActiveRecord::Schema[7.1].define(version: 2023_12_28_145426) do
   create_table "tasks", force: :cascade do |t|
     t.string "description"
     t.boolean "status"
@@ -36,5 +20,12 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_05_182903) do
     t.datetime "completed_at", precision: nil
   end
 
-  add_foreign_key "cards", "lists"
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end

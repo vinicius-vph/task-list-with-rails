@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  # namespace :auth do
-  #   resources :sessions, only: %i[new create destroy]
-  # end
   root to: 'home#index'
 
-  resources :sessions, only: %i[new create destroy]
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
 
-  delete '/signout', to: 'sessions#destroy'
-  get '/signin', to: 'sessions#new'
-  get '/register', to: 'sessions#register'
+  get 'register', to: 'users#new'
+  post 'users', to: 'users#create'
 
   resources :tasks, only: %i[index new create edit update destroy] do
     post 'completions', to: 'completions#create'

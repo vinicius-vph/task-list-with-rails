@@ -1,6 +1,6 @@
 class CompletionsController < ApplicationController
   before_action :authenticate!
-  
+
   def create
     task.completed!
     redirect_to tasks_path
@@ -14,6 +14,7 @@ class CompletionsController < ApplicationController
   private
 
   def task
-    current_user.tasks.find(params[:task_id])
+    # current_user.tasks.find(params[:task_id])
+    Task.find(params[:task_id])
   end
 end

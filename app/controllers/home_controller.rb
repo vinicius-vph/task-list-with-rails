@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   def index
     @boards = item_list
-    @colors = item_bg_colors.shift.first
   end
 
   private
@@ -12,30 +11,30 @@ class HomeController < ApplicationController
         title: "Domésticas",
         description: "This is a description for Item 1",
         image_url: "document-arrow-solid.svg",
-        span: "mt-4"
+        span: "mt-4",
+        color: 'bg-slate-100'
       },
       {
         title: "Profissionais",
         description: "This is a description for Item 2",
         image_url: "arrow-path-solid.svg",
-        span: ""
+        span: "mt-0",
+        color: 'bg-red-100'
       },
       {
         title: "Estudos",
         description: "This is a description for Item 3",
         image_url: "cursor-arrow-solid.svg",
-        span: "mt-4"
+        span: "mt-4",
+        color: 'bg-green-100'
       },
       {
         title: "Lazer",
         description: "This is a description for Item 4",
         image_url: "folder-solid.svg",
-        span: "mt-2"
+        span: "mt-2",
+        color: 'bg-orange-100'
       }
     ]
-  end
-
-  def item_bg_colors
-    ["bg-indigo-200", "bg-purple-200", "bg-pink-200", "bg-blue-gray-200"].shuffle
   end
 end

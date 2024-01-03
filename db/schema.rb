@@ -24,6 +24,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_28_145426) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.integer "active", default: 1
+    t.datetime "last_login_at"
+    t.string "password_reset_token"
+    t.datetime "password_reset_sent_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -4,6 +4,10 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.string :name
       t.string :email
       t.string :password_digest
+      t.integer :active, default: 1
+      t.datetime :last_login_at
+      t.string :password_reset_token
+      t.datetime :password_reset_sent_at
 
       t.timestamps
     end

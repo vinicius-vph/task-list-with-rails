@@ -11,7 +11,7 @@
 
 
 <%= form_with(scope: scope, url: url, method: :post, class: 'form' ) do |form| %>
-  <%= render 'sessions/field_name', form: form if view.eql?(:register) %>
+  <%= render 'auth/shared/field_name', form: form if view.eql?(:register) %>
 
   <%= content_tag :div, class: '' do %>
     <%= form.label :email, title: 'Email' %>
@@ -33,4 +33,5 @@
   <%= form.submit "#{view.eql?(:register) ? 'Criar Cadastro' : 'Logar'}", class: "btn-submit" %>
 <% end %>
 
-<%= render 'sessions/unregistered_user_button' if view.eql?(:login) %>
+<%= render 'auth/shared/reset_password_button' if view.eql?(:login) && !current_user.present?%>
+<%= render 'auth/shared/unregistered_user_button' if view.eql?(:login) %>

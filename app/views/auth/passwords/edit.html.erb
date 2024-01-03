@@ -1,0 +1,10 @@
+<%= render 'shared/back_button' %>
+
+<%= form_with(scope: :user, url: password_reset_path(params[:id]), method: :patch, local: true, class: 'form') do |form| %>
+    <%= content_tag :div, class: '' do %>
+      <%= form.label :password, title: 'Senha' %>
+      <%= form.password_field :password, placeholder:"Digite sua senha" %>
+    <% end %>
+
+  <%= form.submit "Alterar senha senha", class: "btn-submit" %>
+<% end %>

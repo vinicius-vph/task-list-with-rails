@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def signed_in?
-    current_user.present?
+    current_user.present? && (current_user.last_login_at > 1.hour.ago)
   end
 
   private

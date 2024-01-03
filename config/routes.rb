@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'register', to: 'users#new'
   post 'users', to: 'users#create'
 
+  resources :password_resets, only: [:new, :create, :edit, :update]
+
   resources :tasks, only: %i[index new create edit update destroy] do
     post 'completions', to: 'completions#create'
     delete 'completions', to: 'completions#destroy'

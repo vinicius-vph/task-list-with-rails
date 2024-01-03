@@ -1,11 +1,12 @@
 class SessionsController < ApplicationController
   def new
-    render layout: 'without_header'
+    render layout: 'without_header', template: 'auth/sessions/new'
   end
 
   def create
     user = User.find_by(email: session_params[:email].downcase)
     if user && user.authenticate(session_params[:password])
+      user.update(last_login_at: Time.current)
       session[:user_id] = user.id
       redirect_to tasks_path
     else

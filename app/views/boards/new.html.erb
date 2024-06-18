@@ -1,0 +1,24 @@
+<%= button_for :button_back, I18n.t('button_back'), nil %>
+
+<%= content_tag :h3, @boards.model_name,
+    class: 'flex intems-center justify-center font-mono text-lg text-gray-200 mt-10 mx-auto'
+%>
+
+<%= content_tag :div, class: '' do %>
+  <%= content_tag :div, class: '' do %>
+    <%= form_with(scope: @boards, url: @boards,
+    method: :post, class: 'form' ) do |form| %>
+      <%= content_tag :div, class: '' do %>
+        <%= form.label :name, title: 'Nome', class:'' %>
+        <%= form.text_field :name, class:'w-full h-16 rounded-xl', placeholder: I18n.t('form.placeholder') %>
+      <% end %>
+
+      <%= content_tag :div, class: '' do %>
+        <%= form.label :description, title: 'Descrição', class:'' %>
+        <%= form.text_area :description, class:'w-full h-56 rounded-xl', placeholder: I18n.t('form.placeholder') %>
+      <% end %>
+
+      <%= form.submit 'Criar Objetivo', class: 'btn-submit' %>
+    <% end %>
+  <% end %>
+<% end %>

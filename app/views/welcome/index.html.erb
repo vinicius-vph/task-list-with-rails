@@ -1,0 +1,15 @@
+<%= content_tag :h3, I18n.t('welcome.title'),
+    class: 'flex intems-center justify-center font-mono text-sm text-gray-200 text-center mx-auto'
+%>
+
+<div class='grid grid-rows-2 grid-cols-2 grid-flow-row gap-2 hover:gap-4 mt-10 px-2'>
+  <% @images.each do |image, i| %>
+    <%= link_to "#", class: '' do %>
+      <div class="random-bg card rounded-[12px] shadow-lg" >
+        <div class="p-4">
+          <%= image_tag image, class: "random-bg card rounded-[12px] shadow-lg" %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

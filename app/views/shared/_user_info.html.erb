@@ -1,5 +1,5 @@
 <%= image_tag 'vinicius'  %>
-<%= content_tag :a, href: root_path do -%>
-  <%= content_tag :p, "Bem vindo, #{current_user.name}" %>
+<%= content_tag :a, href: current_user.present? ? boards_path : root_path do -%>
+  <%= content_tag :p, I18n.t('welcome.user', user: current_user.name) %>
   <%= content_tag :p, "#{current_user.email}" %>
 <% end -%>

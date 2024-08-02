@@ -5,10 +5,11 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: session_params[:email].downcase)
+
     if user && user.authenticate(session_params[:password])
       user.update(last_login_at: Time.current)
       session[:user_id] = user.id
-      redirect_to tasks_path
+      redirect_to boards_path
     else
       flash[:error] = 'Invalid email/password combination'
       redirect_to login_path

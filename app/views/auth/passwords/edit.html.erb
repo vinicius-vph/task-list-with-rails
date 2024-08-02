@@ -1,4 +1,4 @@
-<%= render 'shared/back_button' %>
+<%= button_for :button_back, I18n.t('button_back'), nil %>
 
 <%= form_with(scope: :user, url: password_reset_path(params[:id]), method: :patch, local: true, class: 'form') do |form| %>
     <%= content_tag :div, class: '' do %>

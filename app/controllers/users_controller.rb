@@ -6,11 +6,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
     if @user.save
       session[:user_id] = @user.id
       @user.update(last_login_at: Time.current)
-      redirect_to tasks_path
+      redirect_to boards_path
     else
+      flash[:error] = @user.errors.full_messages.join(', ')
       render 'new'
     end
   end

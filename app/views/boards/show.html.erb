@@ -6,7 +6,7 @@
 
 <div class='grid grid-rows-2 grid-cols-2 grid-flow-row gap-2 hover:gap-4 mt-10 px-2'>
   <%= button_for :create, nil, new_board_context_path(board_id: params[:id]), { class: 'text-gray-200' } if signed? %>
-  
+
   <% unless @contexts.empty? %>
     <% @contexts.each do |context| %>
       <%= link_to "/boards/#{@boards.id}/contexts/#{context.id}", class: '' do %>

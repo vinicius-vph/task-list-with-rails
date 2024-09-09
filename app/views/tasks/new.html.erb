@@ -1,14 +1,15 @@
-<%= render 'shared/back_button' %>
-<%= content_tag :h3, '📝 Crie sua tarefa, ou Objetivo', class: 'flex intems-center justify-center font-mono text-lg text-gray-200 mt-14 mx-auto' %>
+<%= button_for :button_back, I18n.t('button_back'), "/boards/#{params[:board_id]}/contexts/#{params[:context_id]}" %>
+
+<%= content_tag :h3, I18n.t('task.new'), class: 'flex intems-center justify-center font-mono text-lg text-gray-200 mt-14 mx-auto' %>
 
 <%= content_tag :div, class: '' do %>
   <%= content_tag :div, class: '' do %>
-    <%= form_with(scope: :tasks, url: :tasks, method: :post, class: 'form' ) do |form| %>
+    <%= form_with(scope: @resource, url: "/boards/#{params[:board_id]}/contexts/#{params[:context_id]}/tasks", method: :post, class: 'form' ) do |form| %>
       <%= content_tag :div, class: '' do %>
         <%= form.label :description, title: 'Descrição da Tarefa', class:'' %>
-        <%= form.text_area :description, class:'w-full h-56 rounded-xl', placeholder:'Digite sua tarefa' %>
+        <%= form.text_area :description %>
       <% end %>
-
+      <%= form.hidden_field :context_id, value: params[:context_id] %>
       <%= form.submit 'Criar Tarefa', class: 'btn-submit' %>
     <% end %>
   <% end %>

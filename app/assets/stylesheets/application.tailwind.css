@@ -62,7 +62,7 @@
   }
 
   .btn-create {
-    @apply btn-general w-20 h-20 my-auto rounded-full bg-green-500 mx-auto;
+    @apply btn-general w-14 h-14 my-auto rounded-full bg-green-500 mx-auto;
   }
 
   .btn-svg {
@@ -79,7 +79,7 @@
   /* ***** form ***** */
 
   .form {
-    @apply flex-col rounded-xl shadow-2xl bg-slate-500 p-4 max-w-sm mx-auto mt-24 mb-8;
+    @apply flex-col rounded-xl shadow-2xl bg-slate-500 p-4 max-w-sm mx-auto mt-8 mb-8;
 
     div {
       @apply mb-5;
@@ -115,3 +115,4 @@
     @apply flex flex-row items-center justify-evenly w-full h-1/6 text-xs text-green-600;
   }
 }
+@import 'actiontext.css';

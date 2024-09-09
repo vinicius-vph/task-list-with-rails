@@ -1,4 +1,8 @@
 class Task < ApplicationRecord
+  belongs_to :context
+  has_one :board, through: :context
+  has_one :user, through: :board
+
   def completed?
     completed_at?
   end

@@ -1,10 +1,10 @@
-<%= render 'shared/back_button' %>
+<%= button_for :button_back, I18n.t('button_back'), nil %>
 
 <%= content_tag :h3, '📝 Atualize sua tarefa, ou Objetivo', class: 'flex intems-center justify-center font-mono text-lg text-gray-200 mt-14 mx-auto' %>
 
 <%= content_tag :div, class: '' do %>
   <%= content_tag :div, class: '' do %>
-    <%= form_with(scope: :tasks, model: @task, url: task_path(@task), method: :patch, local: true, class: 'form' ) do |form| %>
+    <%= form_with(scope: :task, model: @task, url: "/boards/#{params[:board_id]}/contexts/#{params[:id]}/tasks/#{@task.id}", method: :patch, local: true, class: 'form' ) do |form| %>
       <%= content_tag :div, class: '' do %>
         <%= form.label :description, title: 'Descrição da Tarefa', class:'' %>
         <%= form.text_area :description, class:'w-full h-56 rounded-xl', placeholder:'Digite sua tarefa', value: @task.description %>

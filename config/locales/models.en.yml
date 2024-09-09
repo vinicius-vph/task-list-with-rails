@@ -1,0 +1,25 @@
+en:
+  activerecord:
+    models:
+      user: 'User'
+    attributes:
+      user:
+        email: 'E-mail'
+        password: 'Password'
+        password_confirmation: 'Password confirmation'
+        name: 'Name'
+        username: 'Username'
+        role: 'Role'
+        created_at: 'Created at'
+        updated_at: 'Updated at'
+        deleted_at: 'Deleted at'
+        deleted: 'Deleted'
+        active: 'Active'
+        inactive: 'Inactive'
+        status: 'Status'
+        login: 'Login'
+        logout: 'Logout'
+        back: 'Back'
+        submit: 'Submit'
+        cancel: 'Cancel'
+        placeholder: 'Type here'

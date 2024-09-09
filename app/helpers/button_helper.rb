@@ -1,5 +1,5 @@
 module ButtonHelper
-  def can_show_signout?
-    current_user.present? && !(params[:controller].eql?('sessions') && params[:action].eql?('new'))
+  def button_for button_type, button_text, path, options = {}
+    send(button_type, button_text, path, options)
   end
 end

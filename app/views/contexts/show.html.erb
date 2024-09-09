@@ -9,8 +9,8 @@
 
   <% unless @tasks.empty? %>
     <% @tasks.each do |task| %>
-      <%= link_to "#", class: '' do %>
-        <div class="bg-red-200 card rounded-2xl shadow-lg" >
+      <%= link_to "/boards/#{params[:board_id]}/contexts/#{@context.try(:id)}/tasks/#{task.try(:id)}", class: '' do %>
+        <div class="bg-red-200 card rounded-2xl shadow-lg py-2 px-4" >
           <div class="p-4">
             <p class="text-gray-700 text-xs"><%= task.description %></p>
           </div>

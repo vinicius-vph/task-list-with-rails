@@ -1,2 +1,28 @@
 en:
-  hello: "Hello world"
+  welcome:
+    title: "Welcome to Tasks and Objectives!"
+    user: "Welcome, %{user}!"
+  board:
+    title: "Board"
+    welcome: "Welcome to the objectives board!"
+    list: "Objectives board"
+  context:
+    title: "Context"
+    welcome: "Welcome to the tasks context!"
+    list: "Context list"
+  task:
+    title: "Tasks"
+    list: "Task list"
+    new: '📝 Create your task !'
+  login_button: "Login"
+  logout_button: "Logout"
+  button_back: "Back"
+  form:
+    submit: "Submit"
+    cancel: "Cancel"
+    placeholder: "Type here"
+  flash:
+    success: "Success %{model}!"
+    error: "Error %{errors}!"
+    warning: "Warning %{model}!"
+    notice: "Notice %{model}!"

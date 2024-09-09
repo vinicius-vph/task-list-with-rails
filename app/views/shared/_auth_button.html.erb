@@ -1,7 +1,0 @@
-<% if can_show_signout?  %>
-  <%= button_to 'Deslogar', logout_path, method: :delete, class: "btn-auth bg-blue-200" %>
-<% end %>
-
-<% unless can_show_signout? %>
-  <%= link_to 'Logar', login_path, class: "btn-auth" %>
-<% end %>

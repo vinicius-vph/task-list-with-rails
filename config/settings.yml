@@ -1,0 +1,27 @@
+seeds:
+  boards: [
+      {
+        name: "Domésticas",
+        description: "Board para tarefas domésticas"
+      },
+      {
+        name: "Profissionais",
+        description: "Board para tarefas profissionais"
+      },
+      {
+        name: "Estudos",
+        description: "Board para tarefas de estudos"
+      },
+      {
+        name: "Lazer",
+        description: "Board para tarefas de lazer"
+      }
+    ]
+  images: [
+    'checklist.jpg',
+    'checklist-blue.jpg',
+    'things.jpg',
+    'lovely.jpg',
+    'checklist-pencil.jpg',
+    'checklist-color.jpg'
+  ]

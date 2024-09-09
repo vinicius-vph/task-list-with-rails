@@ -1,0 +1,28 @@
+pt:
+  welcome:
+    title: "Bem-vindo as Tarefas e Objetivos!"
+    user: "Bem-vindo, %{user}!"
+  board:
+    title: "Painel"
+    welcome: "Bem-vindo ao painel de objetivos!"
+    list: "Painel de objetivos"
+  context:
+    title: "Contexto"
+    welcome: "Bem-vindo ao contexto de tarefas!"
+    list: "Lista de contextos"
+  task:
+    title: "Tarefas"
+    list: "Lista de tarefas"
+    new: '📝 Crie sua tarefa !'
+  login_button: "Entrar"
+  logout_button: "Sair"
+  button_back: "Voltar"
+  form:
+    submit: "Enviar"
+    cancel: "Cancelar"
+    placeholder: "Digite aqui"
+  flash:
+    success: "Sucesso %{model}!"
+    error: "Erro %{errors}!"
+    warning: "Aviso %{model}!"
+    notice: "Aviso %{model}!"

@@ -1,0 +1,12 @@
+<%= button_for :button_back, I18n.t('button_back'), board_context_path(board_id: @task.board.id, id: @task.context.id)%>
+
+<div class="w-11/12 h-auto mx-auto mt-20 py-2 px-4 bg-red-200 card rounded-2xl shadow-lg" >
+  <div class="p-4 mb-4">
+    <p class="text-gray-600 text-sm"><%= @task.description %></p>
+  </div>
+  <div class="flex text-xs">
+    <%= button_for :checkbox, nil, board_context_task_completions_path(task_id: @task.id), { class: 'text-gray-200 mx-3' } %>
+    <%= button_for :delete, nil, "/boards/#{@task.board.id}/contexts/#{@task.context.id}/tasks/#{@task.id}(", { class: 'text-gray-200 mx-3' } %>
+    <%= button_for :edit, nil, edit_board_context_task_path(task_id: @task.id), { class: 'text-gray-200 mx-3' } %>
+  </div>
+</div>

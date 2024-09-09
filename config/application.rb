@@ -28,5 +28,8 @@ module TaskList
     config.after_initialize do
       ActionView::Base.default_form_builder = FormBuilderHelper::CustomFormBuilder
     end
+
+    # Define hosts to be allowed request in development
+    config.hosts = ENV['RAILS_DEVELOPMENT_HOSTS'].split(',') if ENV['RAILS_DEVELOPMENT_HOSTS']
   end
 end

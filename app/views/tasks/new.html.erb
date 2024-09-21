@@ -1,16 +1,18 @@
-<%= button_for :button_back, I18n.t('button_back'), "/boards/#{params[:board_id]}/contexts/#{params[:context_id]}" %>
+<%= button_for :button_back, I18n.t('button_back'), board_context_path(board_id: params[:board_id], id: params[:context_id]) %>
 
-<%= content_tag :h3, I18n.t('task.new'), class: 'flex intems-center justify-center font-mono text-lg text-gray-200 mt-14 mx-auto' %>
+<%= content_tag :h3, I18n.t('task.new'), class: 'flex intems-center justify-center font-mono text-md text-gray-200 mt-14 mx-auto' %>
 
 <%= content_tag :div, class: '' do %>
   <%= content_tag :div, class: '' do %>
-    <%= form_with(scope: @resource, url: "/boards/#{params[:board_id]}/contexts/#{params[:context_id]}/tasks", method: :post, class: 'form' ) do |form| %>
+    <%= form_with(scope: @task,
+        url: board_context_tasks_path(board_id: params[:board_id], context_id: params[:context_id]),
+        method: :post, class: 'form' ) do |form| %>
       <%= content_tag :div, class: '' do %>
-        <%= form.label :description, title: 'Descrição da Tarefa', class:'' %>
-        <%= form.text_area :description %>
+        <%= form.label :description, title: Task.human_attribute_name(:description), class:'' %>
+        <%= form.text_area :description, class:'w-full h-56 rounded-xl', placeholder: I18n.t('form.placeholder') %>
       <% end %>
       <%= form.hidden_field :context_id, value: params[:context_id] %>
-      <%= form.submit 'Criar Tarefa', class: 'btn-submit' %>
+      <%= form.submit I18n.t('form.submit'), class: 'btn-submit' %>
     <% end %>
   <% end %>
 <% end %>

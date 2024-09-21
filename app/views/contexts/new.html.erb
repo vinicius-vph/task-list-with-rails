@@ -7,7 +7,7 @@
 <%= content_tag :div, class: '' do %>
   <%= content_tag :div, class: '' do %>
     <%= form_with(scope: @context, url: board_contexts_path(board_id: params[:board_id]),
-    method: :post, class: 'form' ) do |form| %>
+        method: :post, class: 'form' ) do |form| %>
       <%= content_tag :div, class: '' do %>
         <%= form.label :name, title: 'Nome', class:'' %>
         <%= form.text_field :name, class:'w-full h-16 rounded-xl', placeholder: I18n.t('form.placeholder') %>
@@ -23,7 +23,7 @@
         <%= form.number_field :priority, in: 1..100, step: 1 %>
       <% end %>
 
-      <%= form.submit 'Criar Contexto', class: 'btn-submit' %>
+      <%= form.submit I18n.t('form.submit'), class: 'btn-submit' %>
     <% end %>
   <% end %>
 <% end %>

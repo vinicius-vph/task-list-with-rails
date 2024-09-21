@@ -1,21 +1,21 @@
 <%= button_for :button_back, I18n.t('button_back'), board_path(@context.board_id) %>
 
-<%= content_tag :h3, I18n.t('context.title'),
+<%= content_tag :h3, I18n.t('task.title'),
     class: 'flex intems-center justify-center font-mono text-sm text-gray-200 mx-auto'
 %>
 
-<div class='grid grid-rows-2 grid-cols-2 grid-flow-row gap-2 hover:gap-4 mt-10 px-2'>
-  <%= button_for :create, nil, "/boards/#{params[:board_id]}/contexts/#{params[:id]}/tasks/new", { class: 'text-gray-200' } if signed? %>
+<%= content_tag :div, class: 'grid grid-rows-2 grid-cols-2 grid-flow-row gap-2 hover:gap-4 mt-10 px-2' do %>
+  <%= button_for :create, nil, new_board_context_task_path(board_id: params[:board_id], context_id: params[:id]), { class: 'text-gray-200' } if signed? %>
 
   <% unless @tasks.empty? %>
     <% @tasks.each do |task| %>
-      <%= link_to "/boards/#{params[:board_id]}/contexts/#{@context.try(:id)}/tasks/#{task.try(:id)}", class: '' do %>
-        <div class="bg-red-200 card rounded-2xl shadow-lg py-2 px-4" >
-          <div class="p-4">
-            <p class="text-gray-700 text-xs"><%= task.description %></p>
-          </div>
-        </div>
+      <%= link_to board_context_task_path(board_id: params[:board_id], context_id: params[:id], id: task.try(:id)), class: '' do %>
+      <%= content_tag :div, class: 'bg-red-200 card rounded-2xl shadow-lg py-2 px-4' do %>
+        <%= content_tag :div, class: 'p-4' do %>
+          <%= content_tag :p, task.description, class: 'text-gray-700 text-xs' %>
+        <% end %>
+      <% end %>
       <% end %>
     <% end %>
   <% end %>
-</div>
+<% end %>

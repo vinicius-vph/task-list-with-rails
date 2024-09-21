@@ -1,16 +1,20 @@
 <%= button_for :button_back, I18n.t('button_back'), nil %>
 
-<%= content_tag :h3, '📝 Atualize sua tarefa, ou Objetivo', class: 'flex intems-center justify-center font-mono text-lg text-gray-200 mt-14 mx-auto' %>
+<%= content_tag :h3, I18n.t('task.update'),
+    class: 'flex intems-center justify-center font-mono text-md text-gray-200 mt-14 mx-auto'
+%>
 
 <%= content_tag :div, class: '' do %>
   <%= content_tag :div, class: '' do %>
-    <%= form_with(scope: :task, model: @task, url: "/boards/#{params[:board_id]}/contexts/#{params[:id]}/tasks/#{@task.id}", method: :patch, local: true, class: 'form' ) do |form| %>
+    <%= form_with(scope: :task,
+        model: @task,
+        url: board_context_task_path(board_id: params[:board_id], context_id: params[:context_id], id: @task.id),
+        method: :patch, local: true, class: 'form' ) do |form| %>
       <%= content_tag :div, class: '' do %>
-        <%= form.label :description, title: 'Descrição da Tarefa', class:'' %>
-        <%= form.text_area :description, class:'w-full h-56 rounded-xl', placeholder:'Digite sua tarefa', value: @task.description %>
+        <%= form.label :description, title: Task.human_attribute_name(:description), class:'' %>
+        <%= form.text_area :description, class:'w-full h-56 rounded-xl', placeholder: I18n.t('form.placeholder'), value: @task.description %>
       <% end %>
-
-      <%= form.submit 'Atualizar Tarefa', class: 'btn-submit' %>
+      <%= form.submit I18n.t('form.submit'), class: 'btn-submit' %>
     <% end %>
   <% end %>
 <% end %>

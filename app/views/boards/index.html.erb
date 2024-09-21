@@ -1,18 +1,18 @@
 <%= content_tag :h3, I18n.t('board.welcome'),
-                class: 'flex intems-center justify-center font-mono text-sm text-gray-200 text-center mx-auto'
+    class: 'flex intems-center justify-center font-mono text-sm text-gray-200 text-center mx-auto'
 %>
 
-<div class='grid grid-rows-2 grid-cols-2 grid-flow-row gap-2 hover:gap-4 mt-10 px-2'>
+<%= content_tag :div, class: 'grid grid-rows-2 grid-cols-2 grid-flow-row gap-2 hover:gap-4 mt-10 px-2' do %>
   <%= button_for :create, nil, new_board_path, { class: 'text-gray-200' } if signed? %>
 
   <% @boards.each do |board| %>
     <%= link_to board_path(board), class: '' do %>
-      <div class="bg-blue-300 card rounded-2xl shadow-lg" >
-        <div class="p-4">
-          <h2 class="font-bold text-lg"><%= board.name %></h2>
-          <p class="text-gray-700 text-xs"><%= board.description %></p>
-        </div>
-      </div>
+      <%= content_tag :div, class: 'bg-blue-300 card rounded-2xl shadow-lg' do %>
+        <%= content_tag :div, class: 'p-4' do %>
+          <%= content_tag :h2, board.name, class: 'font-bold text-lg' %>
+          <%= content_tag :p, board.description, class: 'text-gray-700 text-xs' %>
+        <% end %>
+      <% end %>
     <% end %>
   <% end %>
-</div>
+<% end %>

@@ -23,3 +23,10 @@ pt:
         submit: 'Enviar'
         cancel: 'Cancelar'
         placeholder: 'Digite aqui'
+      task:
+        title: 'Tarefa'
+        description: 'Descrição'
+        status: 'Status'
+        priority: 'Prioridade'
+        deadline: 'Prazo'
+        context: 'Contexto'

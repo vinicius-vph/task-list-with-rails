@@ -2,11 +2,7 @@ class BoardsController < ApplicationController
   before_action :authenticate!
 
   def index
-    if current_user
-      @boards = current_user.boards
-    else
-      @boards = Board.default_boards
-    end
+    @boards = current_user ? current_user.boards : Board.default_boards
   end
 
   def new
@@ -17,9 +13,10 @@ class BoardsController < ApplicationController
     @boards = Board.new(board_params.merge(user_id: current_user.id))
 
     if @boards.save
-      redirect_to boards_path, success: t('flash.created', model: Board.model_name.human)
+      flash[:success] = t('boards.create.success')
+      redirect_to boards_path
     else
-      flash.now[:error] = t('flash.error')
+      flash.now[:error] = t('boards.create.error', errors: @boards.errors.full_messages.join(', '))
       render 'new'
     end
   end

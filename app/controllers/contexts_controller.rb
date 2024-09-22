@@ -9,9 +9,10 @@ class ContextsController < ApplicationController
     @context = Context.new(context_params.merge(board_id: params[:board_id]))
 
     if @context.save
-      redirect_to board_path(params[:board_id]), success: t('flash.created', model: Context.model_name.human)
+      flash[:success] = t('contexts.create.success')
+      redirect_to board_path(params[:board_id])
     else
-      flash.now[:error] = t('flash.error')
+      flash.now[:error] = t('contexts.create.error', errors: @context.errors.full_messages.join(', '))
       render 'new'
     end
   end

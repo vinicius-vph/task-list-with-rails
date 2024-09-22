@@ -23,3 +23,10 @@ en:
         submit: 'Submit'
         cancel: 'Cancel'
         placeholder: 'Type here'
+      task:
+        title: 'Task'
+        description: 'Description'
+        status: 'Status'
+        priority: 'Priority'
+        deadline: 'Deadline'
+        context: 'Context'

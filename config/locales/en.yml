@@ -14,6 +14,7 @@ en:
     title: "Tasks"
     list: "Task list"
     new: '📝 Create your task !'
+    update: '📝 Update your task !'
   login_button: "Login"
   logout_button: "Logout"
   button_back: "Back"
@@ -21,8 +22,3 @@ en:
     submit: "Submit"
     cancel: "Cancel"
     placeholder: "Type here"
-  flash:
-    success: "Success %{model}!"
-    error: "Error %{errors}!"
-    warning: "Warning %{model}!"
-    notice: "Notice %{model}!"

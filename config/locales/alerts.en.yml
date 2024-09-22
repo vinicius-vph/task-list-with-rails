@@ -1,0 +1,54 @@
+en:
+  flash:
+    success: "Success %{model}!"
+    error: "Error %{errors}!"
+    warning: "Warning %{model}!"
+    notice: "Notice %{model}!"
+  boards:
+    create:
+      success: "Board created successfully!"
+      error: "Error creating board! %errors"
+      warning: "Warning creating board!"
+      notice: "Notice creating board!"
+    update:
+      success: "Board updated successfully!"
+      error: "Error updating board! %errors"
+      warning: "Warning updating board!"
+      notice: "Notice updating board!"
+    destroy:
+      success: "Board deleted successfully!"
+      error: "Error deleting board! %errors"
+      warning: "Warning deleting board!"
+      notice: "Notice deleting board!"
+  contexts:
+    create:
+      success: "Context created successfully!"
+      error: "Error creating context! %errors"
+      warning: "Warning creating context!"
+      notice: "Notice creating context!"
+    update:
+      success: "Context updated successfully!"
+      error: "Error updating context! %errors"
+      warning: "Warning updating context!"
+      notice: "Notice updating context!"
+    destroy:
+      success: "Context deleted successfully!"
+      error: "Error deleting context! %errors"
+      warning: "Warning deleting context!"
+      notice: "Notice deleting context!"
+  tasks:
+    create:
+      success: "Task created successfully!"
+      error: "Error creating task! %errors"
+      warning: "Warning creating task!"
+      notice: "Notice creating task!"
+    update:
+      success: "Task updated successfully!"
+      error: "Error updating task! %errors"
+      warning: "Warning updating task!"
+      notice: "Notice updating task!"
+    destroy:
+      success: "Task deleted successfully!"
+      error: "Error deleting task! %errors"
+      warning: "Warning deleting task!"
+      notice: "Notice deleting task!"

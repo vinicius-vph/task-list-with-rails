@@ -1,0 +1,54 @@
+pt:
+  flash:
+    success: "Sucesso %{model}!"
+    error: "Erro %{errors}!"
+    warning: "Aviso %{model}!"
+    notice: "Aviso %{model}!"
+  boards:
+    create:
+      success: "Painel criado com sucesso!"
+      error: "Erro ao criar painel! %errors"
+      warning: "Aviso ao criar painel!"
+      notice: "Aviso ao criar painel!"
+    update:
+      success: "Painel atualizado com sucesso!"
+      error: "Erro ao atualizar painel! %errors"
+      warning: "Aviso ao atualizar painel!"
+      notice: "Aviso ao atualizar painel!"
+    destroy:
+      success: "Painel deletado com sucesso!"
+      error: "Erro ao deletar painel! %errors"
+      warning: "Aviso ao deletar painel!"
+      notice: "Aviso ao deletar painel!"
+  contexts:
+    create:
+      success: "Contexto criado com sucesso!"
+      error: "Erro ao criar contexto! %errors"
+      warning: "Aviso ao criar contexto!"
+      notice: "Aviso ao criar contexto!"
+    update:
+      success: "Contexto atualizado com sucesso!"
+      error: "Erro ao atualizar contexto! %errors"
+      warning: "Aviso ao atualizar contexto!"
+      notice: "Aviso ao atualizar contexto!"
+    destroy:
+      success: "Contexto deletado com sucesso!"
+      error: "Erro ao deletar contexto! %errors"
+      warning: "Aviso ao deletar contexto!"
+      notice: "Aviso ao deletar contexto!"
+  tasks:
+    create:
+      success: "Tarefa criada com sucesso!"
+      error: "Erro ao criar tarefa! %errors"
+      warning: "Aviso ao criar tarefa!"
+      notice: "Aviso ao criar tarefa!"
+    update:
+      success: "Tarefa atualizada com sucesso!"
+      error: "Erro ao atualizar tarefa! %errors"
+      warning: "Aviso ao atualizar tarefa!"
+      notice: "Aviso ao atualizar tarefa!"
+    destroy:
+      success: "Tarefa deletada com sucesso!"
+      error: "Erro ao deletar tarefa! %errors"
+      warning: "Aviso ao deletar tarefa!"
+      notice: "Aviso ao deletar tarefa!"

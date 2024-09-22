@@ -14,6 +14,7 @@ pt:
     title: "Tarefas"
     list: "Lista de tarefas"
     new: '📝 Crie sua tarefa !'
+    update: '📝 Atualize sua tarefa !'
   login_button: "Entrar"
   logout_button: "Sair"
   button_back: "Voltar"
@@ -21,8 +22,3 @@ pt:
     submit: "Enviar"
     cancel: "Cancelar"
     placeholder: "Digite aqui"
-  flash:
-    success: "Sucesso %{model}!"
-    error: "Erro %{errors}!"
-    warning: "Aviso %{model}!"
-    notice: "Aviso %{model}!"

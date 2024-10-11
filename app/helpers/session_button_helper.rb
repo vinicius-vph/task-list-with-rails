@@ -7,7 +7,7 @@ module SessionButtonHelper
     end
   end
 
-  def buttons.back button_text, path, options = {}
+  def button_back button_text, path, options = {}
     content_tag :a, href: (path || request.env["HTTP_REFERER"] || root_path), class:"btn-back mt-2 ml-2" do
       image_tag 'arrow-left-solid.svg', class: 'btn-svg'
     end

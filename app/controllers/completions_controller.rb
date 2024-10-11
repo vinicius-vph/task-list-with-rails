@@ -3,12 +3,12 @@ class CompletionsController < ApplicationController
 
   def create
     task.completed!
-    redirect_to tasks_path
+    redirect_to board_context_path(board_id: task.board.try(:id), id: task.context.try(:id))
   end
 
   def destroy
     task.incompleted!
-    redirect_to tasks_path
+    redirect_to board_context_path(board_id: task.board.try(:id), id: task.context.try(:id))
   end
 
   private

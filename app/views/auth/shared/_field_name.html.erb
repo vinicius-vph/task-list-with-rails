@@ -1,4 +1,4 @@
 <%= content_tag :div, class: '' do %>
-  <%= form.label :name, title: 'Nome' %>
-  <%= form.text_field :name, placeholder:"Digite seu nome" %>
+  <%= form.label :name, title: User.human_attribute_name(:name) %>
+  <%= form.text_field :name, placeholder: t('form.placeholder.name') %>
 <% end %>

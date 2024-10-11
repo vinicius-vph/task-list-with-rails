@@ -16,6 +16,14 @@ module CrudButtonHelper
   end
 
   def checkbox button_text, path, options = {}
-    button_to '✅', path, class: "btn-check #{options.fetch(:class)}"
+    prepare_checkbox(options)
+    button_to @icon, path, class: "btn-check #{options.fetch(:class)}", method: @action
+  end
+
+  private
+  def prepare_checkbox(options)
+    object = options.fetch(:object)
+    @icon = object.completed? ? '✅' : '❎'
+    @action = object.completed? ? :delete : :post
   end
 end

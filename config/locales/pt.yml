@@ -1,6 +1,8 @@
 pt:
   welcome:
-    title: "Bem-vindo as Tarefas e Objetivos!"
+    text: Bem vindo !
+    text_back: 'Bem vindo de Volta !'
+    title: "Bem-vindo ao Quadro de Objetivos!"
     user: "Bem-vindo, %{user}!"
   board:
     title: "Painel"
@@ -15,10 +17,18 @@ pt:
     list: "Lista de tarefas"
     new: '📝 Crie sua tarefa !'
     update: '📝 Atualize sua tarefa !'
-  login_button: "Entrar"
-  logout_button: "Sair"
-  button_back: "Voltar"
   form:
-    submit: "Enviar"
+    submit:
+      default: "Enviar"
+      login: "Entrar"
+      register: "Registrar"
+      password_resets: "Enviar email de reset da senha"
+      password_reset: "Alterar senha senha"
     cancel: "Cancelar"
-    placeholder: "Digite aqui"
+    placeholder:
+      default: "Digite aqui"
+      email: "Digite seu email"
+      password: "Digite sua senha"
+      remember: "Lembrar-me"
+      name: "Digite seu nome"
+

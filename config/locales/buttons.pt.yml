@@ -1,0 +1,15 @@
+pt:
+  buttons:
+    login: "Entrar"
+    logout: "Sair"
+    back: "Voltar"
+    submit: "Enviar"
+    cancel: "Cancelar"
+    new_task: '📝 Crie sua tarefa !'
+    update_task: '📝 Atualize sua tarefa !'
+    new_board: '📝 Crie seu painel !'
+    update_board: '📝 Atualize seu painel !'
+    new_context: '📝 Crie seu contexto !'
+    update_context: '📝 Atualize seu contexto !'
+    password_reset: '🔑 Recuperar sua senha ?'
+    register: 'Não tem cadastro ?'

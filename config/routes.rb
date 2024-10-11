@@ -37,7 +37,7 @@ Rails.application.routes.draw do
 
     resources :boards, only: %i[index new show create update destroy] do
       resources :contexts, only: %i[new show create update destroy] do
-        resources :tasks, only: %i[new show create edit update destroy] do
+        resources :tasks, only: %i[new create edit update destroy] do
           post 'completions', to: 'completions#create'
           delete 'completions', to: 'completions#destroy'
         end

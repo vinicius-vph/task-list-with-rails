@@ -1,0 +1,15 @@
+pt:
+  buttons:
+    login: "Login"
+    logout: "Logout"
+    back: "Back"
+    submit: "Submit"
+    cancel: "Cancel"
+    new_task: '📝 Create your task !'
+    update_task: '📝 Update your task !'
+    new_board: '📝 Create your board !'
+    update_board: '📝 Update your board !'
+    new_context: '📝 Create your context !'
+    update_context: '📝 Update your context !'
+    password_reset: '🔑 Reset your password ?'
+    register: 'Don`t have Register ?'

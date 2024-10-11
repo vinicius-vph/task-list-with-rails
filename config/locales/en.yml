@@ -1,6 +1,8 @@
 en:
   welcome:
-    title: "Welcome to Tasks and Objectives!"
+    text: Welcome !
+    text_back: 'Welcome back !'
+    title: "Welcome to Objectives Board!"
     user: "Welcome, %{user}!"
   board:
     title: "Board"
@@ -15,10 +17,18 @@ en:
     list: "Task list"
     new: '📝 Create your task !'
     update: '📝 Update your task !'
-  login_button: "Login"
-  logout_button: "Logout"
-  button_back: "Back"
   form:
-    submit: "Submit"
+    submit:
+      default: "Submit"
+      login: "Login"
+      register: "Register"
+      password_resets: "Send password reset email"
+      password_reset: "Change password"
     cancel: "Cancel"
-    placeholder: "Type here"
+    placeholder:
+      default: "Type here"
+      email: "Type your email"
+      password: "Type your password"
+      remember: "Remember-me"
+      name: "Type your name"
+

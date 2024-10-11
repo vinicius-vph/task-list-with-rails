@@ -1,9 +1,9 @@
-<%= button_for :button_back, I18n.t('button_back'), nil %>
+<%= button_for :buttons.back, I18n.t('buttons.back'), nil %>
 
 <%= form_with(url: password_resets_path, local: true, class: 'form') do |form| %>
   <%= content_tag :div, class: 'mb-12' do %>
-    <%= form.label :email, title: 'Email' %>
-    <%= form.text_field :email, placeholder: "Digite seu email" %>
+    <%= form.label :email, title: User.human_attribute_name(:email) %>
+    <%= form.text_field :email, placeholder: t('form.placeholder.email') %>
   <% end %>
-  <%= form.submit "Enviar email de reset da senha", class: "btn-submit" %>
+  <%= form.submit t('form.submit.password_resets'), class: "btn-submit" %>
 <% end %>

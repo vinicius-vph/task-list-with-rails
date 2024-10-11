@@ -1,6 +1,12 @@
-<%= button_for :button_back, I18n.t('button_back'), nil %>
+<%
+  if @task.nil?
+    @task = Task.find(params[:task_id])
+  end
+%>
 
-<%= content_tag :h3, I18n.t('task.update'),
+<%= button_for :button_back, t('buttons.back'), nil %>
+
+<%= content_tag :h3, t('task.update'),
     class: 'flex intems-center justify-center font-mono text-md text-gray-200 mt-14 mx-auto'
 %>
 
@@ -12,9 +18,9 @@
         method: :patch, local: true, class: 'form' ) do |form| %>
       <%= content_tag :div, class: '' do %>
         <%= form.label :description, title: Task.human_attribute_name(:description), class:'' %>
-        <%= form.text_area :description, class:'w-full h-56 rounded-xl', placeholder: I18n.t('form.placeholder'), value: @task.description %>
+        <%= form.text_area :description, class:'w-full h-56 rounded-xl', placeholder: t('form.placeholder.default'), value: @task.description %>
       <% end %>
-      <%= form.submit I18n.t('form.submit'), class: 'btn-submit' %>
+      <%= form.submit t('form.submit.default'), class: 'btn-submit' %>
     <% end %>
   <% end %>
 <% end %>

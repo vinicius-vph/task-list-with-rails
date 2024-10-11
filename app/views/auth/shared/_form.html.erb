@@ -1,9 +1,10 @@
-<%= button_for :button_back, I18n.t('button_back'), root_path %>
+<%= button_for :buttons.back, t('buttons.back'), root_path %>
 
 <%
   scope = view.eql?(:register) ? :user : :session
   url = view.eql?(:register) ? :users : :login
-  title = view.eql?(:register) ? 'Bem vindo !' : 'Bem vindo de Volta !'
+  title = view.eql?(:register) ? t('welcome.text') : t('welcome.text_back')
+  checkbox_klass = "w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-1 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
 %>
 
 <%= content_tag :a, href: root_path do -%>
@@ -15,24 +16,23 @@
   <%= render 'auth/shared/field_name', form: form if view.eql?(:register) %>
 
   <%= content_tag :div, class: '' do %>
-    <%= form.label :email, title: 'Email' %>
-    <%= form.text_field :email, placeholder: "Digite seu email" %>
+    <%= form.label :email, title: User.human_attribute_name(:email) %>
+    <%= form.text_field :email, placeholder: t('form.placeholder.email') %>
   <% end %>
 
   <%= content_tag :div, class: '' do %>
-    <%= form.label :password, title: 'Senha' %>
-    <%= form.password_field :password, placeholder: "Digite sua senha" %>
+    <%= form.label :password, title: User.human_attribute_name(:password) %>
+    <%= form.password_field :password, placeholder: t('form.placeholder.password') %>
   <% end %>
 
   <%= content_tag :div, class: 'remember-me' do %>
     <%= content_tag :div, class: '' do %>
-      <%= check_box_tag '', value: '',  checked: false, id: 'remember', class: "w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-1 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" %>
-      <%= content_tag :label, 'Remember me', for: :remember, class: "" %>
+      <%= check_box_tag '', value: '',  checked: false, id: 'remember', class: checkbox_klass %>
+      <%= content_tag :label, t('form.placeholder.remember'), for: :remember, class: "" %>
     <% end %>
   <% end %>
 
-  <%= form.submit "#{view.eql?(:register) ? 'Criar Cadastro' : 'Logar'}", class: "btn-submit" %>
+  <%= form.submit "#{view.eql?(:register) ? t('form.submit.register') : t('form.submit.login') }", class: "btn-submit" %>
 <% end %>
 
-<%= render 'auth/shared/reset_password_button' if view.eql?(:login) && !current_user.present?%>
-<%= render 'auth/shared/unregistered_user_button' if view.eql?(:login) %>
+<%= render 'auth/shared/extra_buttons', view: view %>

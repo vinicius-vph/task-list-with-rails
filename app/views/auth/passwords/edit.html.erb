@@ -1,10 +1,10 @@
-<%= button_for :button_back, I18n.t('button_back'), nil %>
+<%= button_for :buttons.back, t('buttons.back'), nil %>
 
 <%= form_with(scope: :user, url: password_reset_path(params[:id]), method: :patch, local: true, class: 'form') do |form| %>
     <%= content_tag :div, class: '' do %>
-      <%= form.label :password, title: 'Senha' %>
-      <%= form.password_field :password, placeholder:"Digite sua senha" %>
+      <%= form.label :password, title: User.human_attribute_name(:password) %>
+      <%= form.password_field :password, placeholder: t('form.placeholder.password') %>
     <% end %>
 
-  <%= form.submit "Alterar senha senha", class: "btn-submit" %>
+  <%= form.submit t('form.submit.password_reset'), class: "btn-submit" %>
 <% end %>
